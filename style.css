@@ -83,12 +83,12 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
 
     cursor: pointer;
 }
-#resizing-agent{
-    
-}
 #input-container{
     width: 70%;
     min-width: 300px;
+
+    display: inline-block;
+    vertical-align: middle;
 }
 #beverageInput{
     padding-left: 15px;
@@ -110,6 +110,24 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
     background-color: var(--water-color);
     transition: var(--transition-delay);
 }
+#add-beverage{
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 20px;
+    height: 20px;
+    line-height: 15px;
+
+    padding: 0px;
+
+    text-align: center;
+
+    font-size: 15px;
+    font-style: bold;
+    color: white;
+
+    background-color: var(--water-color);
+}
 #button-container {
     width: 15%;
     white-space: nowrap;
@@ -124,8 +142,6 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
 #button-container a:first-child:hover{
     background-color: var(--water-color-light);
     transition: var(--transition-delay);
-}
-#space-filler{
 }
 label#caffeine-amount{
     margin-top: 300px;
