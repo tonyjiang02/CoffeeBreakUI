@@ -1,26 +1,33 @@
+// Initialize Cloud Firestore through Firebase
+firebase.initializeApp({
+    apiKey: 'AIzaSyCCTpaTOmOFf-mzP5mWR7OMrw_YrtJedys',
+    authDomain: 'coffeebreak-fd59b.firebaseapp.com',
+    projectId: 'coffeebreak-fd59b'
+});
 
 
-
-function caffeinelevel(currMg, index){
+function caffeinelevel(){
     
     //store mg and timestamp in user
     var timestamp = Date.now(); //time drink was entered
+    var account = db.collection("users").doc(localStorage.getItem("user"));
 
-
-    var millisec = 0;
-    if(index == 1){
-        millisec = ln(95.177/currMg)/(-3.85*10^-8); //optimal time till sleep
-    } else {
-        var currTime = Date.now();
-        var mgTotal = 0;
-        for(var i = 0; i < /*user.orders*/ ; i++){
-            var time = currTime - /*users[i].timestamp*/;
-            mgTotal += Math.E(-3.85*10^-8*time + ln(/*users[i].mg*/));
+    var currTime = Date.now();
+    var mgTotal = 0;
+    var bevs;
+    account.get().then(function(doc) {
+        if (doc.exists) {
+            var data = doc.data();
+            bevs = data.beverages;
         }
-        
-        millisec = ln(95.177/mgTotal)/(-3.85*10^-8);
+    });
+    for(var i = 0; i < bevs.length; i++){
+        var time = currTime - bevs[i].timestamp;
+        mgTotal += Math.E(-3.85*10^-8*time + ln(bevs[i].mg));
     }
-
-    
+     
+    millisec = ln(95.177/mgTotal)/(-3.85*10^-8);
+     
     //5% significance level
+    //display data on chart
 }

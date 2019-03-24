@@ -34,7 +34,7 @@ function addDrink() {
     console.log(time);
 
 
-    var account = db.collection("users").doc(localStorage.getItem());
+    var account = db.collection("users").doc(localStorage.getItem("user"));
     var bev = new Beverage(time, mg);
     account.get().then(function(doc){
         if(doc.exists) {
