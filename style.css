@@ -15,7 +15,7 @@ body{
     background-repeat: no-repeat;
     background-size: 1700px auto;
 }
-button, #beverageInput, #form-container a.linkButton {
+button, ul, #beverageInput, #form-container a.linkButton {
     border-radius: 1rem;
     border: none;
     outline: none;
@@ -31,6 +31,15 @@ input{
 }
 ul{
     width: 100%;
+}
+#input-container .easy-autocomplete-container ul li:first-child {
+    border-radius: 1rem 1rem 0rem 0rem;
+}
+#input-container .easy-autocomplete-container ul li:last-child {
+    border-radius: 0rem 0rem 1rem 1rem;
+}
+#input-container .easy-autocomplete-container ul li.selected {
+    background-color: var(--water-color-light);
 }
 a.linkButton , a.linkButton :hover, a.linkButton :visited{
     padding: 5px 12px;

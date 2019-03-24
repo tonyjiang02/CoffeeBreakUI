@@ -8,7 +8,10 @@
     <script defer type="text/javascript">
       window.onload = function(){
         if (localStorage.getItem("loggedIn") != "1") {
-          document.querySelector("#button-container").classList.remove("hidden");
+          document.querySelector("#add-beverage").classList.add("hidden");
+          document.querySelector("#userLink").classList.add("hidden");
+          document.querySelector("#signupLink").classList.remove("hidden");
+          document.querySelector("#loginLink").classList.remove("hidden");
         }
       }
     </script>
@@ -37,9 +40,10 @@
           <button id = "add-beverage">+</button>
           <div id = "space-filler"></div>
         </div>
-        <div class = "hidden" id = "button-container">
-          <a class = "linkButton" href = "signup.html">Sign Up</a>
-          <a class = "linkButton" href = "login.html">Login</a>
+        <div id = "button-container">
+          <a class = "linkButton hidden" id = "signupLink" href = "signup.html">Sign Up</a>
+          <a class = "linkButton hidden" id = "loginLink" href = "login.html">Login</a>
+          <a class = "linkButton" id = "userLink" href = "user.html">Account</a>
         </div>
     </form>
     <label id = "caffeine-amount">0</label>
