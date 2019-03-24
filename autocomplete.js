@@ -5002,6 +5002,8 @@ function refreshInput(){
 }
 
 function addBevClick(){
+    addDrink();
+
     refreshInput();
 
     $.each($(".added-glow"), function(i, element){
