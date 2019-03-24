@@ -62,7 +62,7 @@ function signUpForm() {
                     beverages: drinks
                 }).then(function () {
                     alert("Success! Account created.");
-                    window.location.href = "/";
+                    window.location.href = "/index.html";
                 })
                 allUsersRef.update({
                     UserMap: map
@@ -89,7 +89,7 @@ function loginForm() {
             localStorage.setItem("loggedIn", "1");
             localStorage.setItem("user", combineHash(username, password).toFixed(10));
 
-            window.location.href = "/";
+            window.location.href = "/index.html";
         } else {
             alert("Invalid Login Information");
         }
