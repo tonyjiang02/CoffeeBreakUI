@@ -89,8 +89,11 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
     transition: var(--transition-delay);
 }
 #form-container:focus-within {
-    height: 100px;
     box-shadow: 0px 0px 200px 10px var(--water-color);
+    transition: var(--transition-delay);
+}
+#form-container.larger {
+    height: 100px;
     transition: var(--transition-delay);
 }
 #form-container > * {

@@ -4987,3 +4987,10 @@ function search(){
             element.classList.remove("readyToAdd");
     });
 }
+
+function focusInput(){
+    if (document.querySelector("#form-container").classList.contains("larger"))
+        document.querySelector("#form-container").classList.remove("larger");
+    else
+        document.querySelector("#form-container").classList.add("larger");
+}

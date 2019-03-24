@@ -43,7 +43,9 @@
         </a>
         <div id = "resizing-agent">
           <div id = "input-container">
-            <input class = "addable" type = "text" id = "beverageInput" oninput = "search()" onchange = "search()" placeholder = "Enter your drink here">
+            <input class = "addable" type = "text" id = "beverageInput" 
+            onfocus = "focusInput()" onfocusout = "focusInput()" oninput = "search()" onchange = "search()" 
+            placeholder = "Enter your drink here">
           </div>
           <button class = "addable" id = "add-beverage">+</button>
           <div id = "space-filler"></div>
