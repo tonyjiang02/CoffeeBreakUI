@@ -8,8 +8,19 @@
     <script defer type="text/javascript">
       window.onload = function(){
         if (localStorage.getItem("loggedIn") != "1") {
-          document.querySelector("#button-container").setAttribute("style", "display: table-cell;");
+          document.querySelector("#add-beverage").classList.add("hidden");
+          document.querySelector("#userLink").classList.add("hidden");
+          document.querySelector("#logoutButton").classList.add("hidden");
+          document.querySelector("#signupLink").classList.remove("hidden");
+          document.querySelector("#loginLink").classList.remove("hidden");
         }
+      }
+
+      function logout(){
+        localStorage.setItem("loggedIn", "0");
+        localStorage.setItem("user", "");
+
+        window.location.href = "/";
       }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -26,20 +37,22 @@
   </head>
 
   <body>
-    <form id = "form-container">
+    <form class = "addable-glow" id = "form-container">
         <a id = "logo" href = "/">
           <div id = "logo-overlay"></div>
         </a>
         <div id = "resizing-agent">
           <div id = "input-container">
-            <input type = "text" id = "beverageInput" oninput = "search()" onchange = "search()" placeholder = "Enter your drink here">
+            <input class = "addable" type = "text" id = "beverageInput" oninput = "search()" onchange = "search()" placeholder = "Enter your drink here">
           </div>
-          <button id = "add-beverage">+</button>
+          <button class = "addable" id = "add-beverage">+</button>
           <div id = "space-filler"></div>
         </div>
-        <div id = "button-container" style = "display: none;">
-          <a class = "linkButton" href = "signup.html">Sign Up</a>
-          <a class = "linkButton" href = "login.html">Login</a>
+        <div id = "button-container">
+          <a class = "linkButton hidden" id = "signupLink" href = "signup.html">Sign Up</a>
+          <a class = "linkButton hidden" id = "loginLink" href = "login.html">Login</a>
+          <a class = "linkButton" id = "userLink" href = "users.html">Account</a>
+          <button id = "logoutButton" onclick = "logout()">Logout</button>
         </div>
     </form>
     <label id = "caffeine-amount">0</label>

@@ -4,6 +4,8 @@
     --water-color: rgb(77, 206, 223);
     --water-color-light: rgb(143, 240, 253);
 
+    --wheatgrass-color: rgb(94, 223, 77);
+
     --transition-delay: .5s;
 }
 
@@ -15,13 +17,19 @@ body{
     background-repeat: no-repeat;
     background-size: 1700px auto;
 }
-button, #beverageInput, #form-container a.linkButton {
+button, ul, #beverageInput, #form-container a.linkButton {
     border-radius: 1rem;
     border: none;
     outline: none;
     box-shadow: none;
-
-    background-color: var(--coffee-color);
+}
+button{
+    color: white;
+    background-color: var(--water-color);
+}
+button:hover{
+    background-color: var(--water-color-light);
+    transition: var(--transition-delay);
 }
 button:focus{
     outline: none;
@@ -32,11 +40,33 @@ input{
 ul{
     width: 100%;
 }
+#input-container .easy-autocomplete-container ul li:first-child {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+#input-container .easy-autocomplete-container ul li:last-child {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+#input-container .easy-autocomplete-container ul li.selected {
+    background-color: var(--water-color-light);
+}
 a.linkButton , a.linkButton :hover, a.linkButton :visited{
     padding: 5px 12px;
     padding-bottom: 7px;
     color: white;
     text-decoration: none;
+}
+.hidden {
+    display: none !important;
+}
+.addable.readyToAdd {
+    background-color: var(--wheatgrass-color) !important;
+    transition: var(--transition-delay);
+}
+.addable-glow.readyToAdd {
+    box-shadow: 0px 0px 200px 10px var(--wheatgrass-color) !important;
+    transition: var(--transition-delay);
 }
 .jumbotron {
     height: 100%;
@@ -56,6 +86,7 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
     border-spacing: 20px 0px;
 
     box-shadow: 0px 0px 200px 10px var(--coffee-color);
+    transition: var(--transition-delay);
 }
 #form-container:focus-within {
     box-shadow: 0px 0px 200px 10px var(--water-color);
@@ -70,6 +101,7 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
 }
 #form-container a.linkButton {
     margin: auto 5px;
+    background-color: var(--coffee-color);
 }
 #form-container #logo {
     width: 250px;
@@ -104,8 +136,11 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
     padding-left: 15px;
     width: 100%;
     height: 36px;
+
+    background-color: var(--coffee-color);
+    transition: var(--transition-delay);
 }
-#beverageInput, #beverageInput::placeholder {
+#beverageInput, #beverageInput::placeholder, #form-container a.linkButton {
     color: white;
 }
 #beverageInput:focus {
@@ -114,6 +149,7 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
 }
 #add-beverage {
     display: inline-block;
+    visibility: hidden;
     vertical-align: middle;
     text-align: center;
 
@@ -122,12 +158,9 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
 
     font-size: 15px;
     font-weight: bold;
-    color: white;
-
-    background-color: var(--water-color);
 }
-#add-beverage:hover {
-    background-color: var(--water-color-light);
+#add-beverage.readyToAdd {
+    visibility: visible;
     transition: var(--transition-delay);
 }
 #button-container {

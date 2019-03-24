@@ -48,14 +48,11 @@ function signUpForm() {
     var password = $("#inputPassword").val();
     var drinks = [];
     var hashedString = combineHash(username, password).toFixed(10);
-    alert(hashedString);
     var allUsersRef = db.collection('users').doc('allUsers');
     allUsersRef.get().then(function (doc) {
         if (doc.exists) {
             data = doc.data();
             var map = data.UserMap;
-            console.log(map);
-            console.log(map["test"])
             if (!map[username]) {
                 map[username] = "Exists"
                 var userRef = db.collection('users').doc(hashedString);
@@ -65,11 +62,11 @@ function signUpForm() {
                     beverages: drinks
                 }).then(function () {
                     alert("Success!");
+                    window.location.href = "/";
                 })
                 allUsersRef.update({
                     UserMap: map
                 }).then(function () {
-                    console.log("Updated")
                 })
             } else {
                 alert("account already exists")
@@ -93,6 +90,7 @@ function loginForm() {
             localStorage.setItem("user", combineHash(username, password).toFixed(10));
 
             alert("Logged in!");
+            window.location.href = "/";
         } else {
             alert("Invalid Login Information");
         }
