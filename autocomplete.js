@@ -4978,7 +4978,12 @@ function getCaffeine(drink) {
 }
 
 function search(){
-    var amountString = getCaffeine(document.querySelector("#beverageInput").value);
+    var name = document.querySelector("#beverageInput").value;
+    var amountString = getCaffeine(name);
+    if (name != "")
+        document.querySelector("#drink-name").innerHTML = name;
+    else
+    document.querySelector("#drink-name").innerHTML = "No Beverage Selected";
     document.querySelector("#caffeine-amount").innerHTML = amountString;
 
     $.each($(".addable, .addable-glow"), function(i, element){

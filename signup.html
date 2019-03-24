@@ -14,15 +14,18 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
     <link rel="stylesheet" href="login-register.css">
     <script src="userAccess.js"></script>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="loginsignup.css">
 </head>
 
 <body>
-    <nav class="navbar top">
-        <a class="logo" href="index.html">
-            <img src="/images/logo.png" width="300" height="66" alt="">
-        </a>
-    </nav>
+    <div class="top" id = "navBar">
+        <a class="logo" href="index.html"></a>
+        <div></div>
+        <div id = "button-container">
+            <a class = "linkButton" id = "loginLink" href = "login.html">Login</a>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-6">
             <div class="container typewriter">
@@ -31,6 +34,7 @@
         </div>
         <div class="col-md-6">
             <div class="container">
+                <label class = "title">Account Creation</label>
                 <form>
                     <div class="form-group">
                         <label for="inputEmail">Email address</label>

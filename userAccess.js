@@ -61,7 +61,7 @@ function signUpForm() {
                     password: password,
                     beverages: drinks
                 }).then(function () {
-                    alert("Success!");
+                    alert("Success! Account created.");
                     window.location.href = "/";
                 })
                 allUsersRef.update({
@@ -69,7 +69,7 @@ function signUpForm() {
                 }).then(function () {
                 })
             } else {
-                alert("account already exists")
+                alert("Account with that email already exists")
             }
         }
     })
@@ -89,7 +89,6 @@ function loginForm() {
             localStorage.setItem("loggedIn", "1");
             localStorage.setItem("user", combineHash(username, password).toFixed(10));
 
-            alert("Logged in!");
             window.location.href = "/";
         } else {
             alert("Invalid Login Information");
