@@ -4939,6 +4939,7 @@ var caffeineMap = [
 
 var searchBar = document.querySelector("#beverageInput");
 var amountDisplay = document.querySelector("#caffeine-amount");
+var addBeverage = document.querySelector("#addBeverage");
 processMap();
 $(document).ready(function() {
     autocompleteForm();
@@ -4993,4 +4994,26 @@ function focusInput(){
         document.querySelector("#form-container").classList.remove("larger");
     else
         document.querySelector("#form-container").classList.add("larger");
+}
+
+function refreshInput(){
+    document.querySelector("#beverageInput").value = "";
+    search();
+}
+
+function addBevClick(){
+    refreshInput();
+
+    $.each($(".added-glow"), function(i, element){
+        if (!element.classList.contains("readyToAdd"))
+            element.classList.add("readyToAdd");
+
+        var millisecondsToWait = 500;
+        setTimeout(function() {
+            $.each($(".added-glow"), function(i, element){
+                if (element.classList.contains("readyToAdd"))
+                    element.classList.remove("readyToAdd");
+            });
+        }, millisecondsToWait);
+    });
 }

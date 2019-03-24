@@ -68,6 +68,14 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
     box-shadow: 0px 0px 200px 10px var(--wheatgrass-color) !important;
     transition: var(--transition-delay);
 }
+.added-glow{
+    box-shadow: none;
+    transition: var(--transition-delay);
+}
+.added-glow.readyToAdd {
+    box-shadow: 0px 0px 10px 5px var(--wheatgrass-color) !important;
+    transition: var(--transition-delay);
+}
 .jumbotron {
     height: 100%;
 }
@@ -166,11 +174,12 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
     padding: 0px 7px;
     padding-bottom: 3px;
 
-    font-size: 15px;
+    font-size: 0px;
     font-weight: bold;
 }
 #add-beverage.readyToAdd {
     visibility: visible;
+    font-size: 15px;
     transition: var(--transition-delay);
 }
 #button-container {
@@ -213,5 +222,19 @@ label#caffeine-amount::after{
 @media only screen and (max-width: 500px) {
     #button-container{
         display: none;
+    }
+}
+
+@keyframes addToAccount{
+    0%{
+        position: relative;
+        left: 3%;
+    }
+
+    100%{
+        position: relative;
+        left: 70%;
+        font-size: 0px;
+        opacity: 0;
     }
 }
