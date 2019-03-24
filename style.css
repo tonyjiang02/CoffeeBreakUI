@@ -239,16 +239,6 @@ label#caffeine-amount::after{
     font-size: 50px;
     color: white;
 }
-#vertical-break{
-    position: absolute;
-    width: 30px;
-    height: 500px;
-    
-    top: 130px;
-    right: 37%;
-
-    background-color: white;
-}
 #about{
     text-align: right;
 
@@ -259,7 +249,7 @@ label#caffeine-amount::after{
     line-height: 50px;
 
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
 
     width: 30%;
