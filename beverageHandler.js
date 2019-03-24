@@ -6,17 +6,18 @@ firebase.initializeApp({
 });
 
 
-function Beverage(timestamp,mg){
+function Beverage(name,timestamp,mg){
     this.timestamp = timestamp;
     this.mg = mg;
+    this.name = name;
 }
 
 
 var db = firebase.firestore();
 $(document).ready(function() {
-    $("#plusbutton").click(function(e) {
+    $("#add-beverage").click(function(e) {
         e.preventDefault();
-
+        console.log("clicked");
         addDrink();
     })
     $("#submitLogin").click(function(e) {
@@ -28,18 +29,21 @@ $(document).ready(function() {
 //         db firebase storing
 // // })
 function addDrink() {
-    var mg = $('#caffeine-amount').innerHTML;
+    var drinkName = $("#beverageInput").val();
+    var mg = $('#caffeine-amount').text();
     console.log(mg);
+    console.log(drinkName);
     var time = Date.now();
     console.log(time);
-
-
-    var account = db.collection("users").doc(localStorage.getItem("user"));
-    var bev = new Beverage(time, mg);
+    var userID = localStorage.getItem("user");
+    console.log(userID);
+    var account = db.collection("users").doc(userID);
+    var bev = new Beverage(drinkName,time, mg);
     account.get().then(function(doc){
         if(doc.exists) {
             var data = doc.data();
             var newbeverages = data.beverages;
+            bev = JSON.parse(JSON.stringify(bev));
             newbeverages.push(bev);
             return account.update({
                 beverages: newbeverages

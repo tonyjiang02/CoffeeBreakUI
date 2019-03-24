@@ -90,7 +90,7 @@ function loginForm() {
     userRef.get().then(function (userDoc) {
         if (userDoc.exists && userDoc.data()['password'] === password) {
             localStorage.setItem("loggedIn", "1");
-            localStorage.setItem("user", combineHash(username, password));
+            localStorage.setItem("user", combineHash(username, password).toFixed(10));
 
             alert("Logged in!");
         } else {
