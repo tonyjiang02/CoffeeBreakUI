@@ -31,3 +31,18 @@ function caffeinelevel(){
     //5% significance level
     //display data on chart
 }
+function calcLevel(bevs) {
+    for(var i = 0; i < bevs.length; i++){
+        var time = currTime - bevs[i].timestamp;
+        mgTotal += Math.E(-3.85*10^-8*time + ln(bevs[i].mg));
+    }
+     
+    millisec = ln(95.177/mgTotal)/(-3.85*10^-8);
+}
+function calcSum(bevs) {
+    var output = 0;
+    for(var i = 0; i < bevs.length; i++){
+        output += parseInt(bevs[i].mg);
+    }
+    return output;
+}

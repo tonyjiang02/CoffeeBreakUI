@@ -38,7 +38,7 @@ function addDrink() {
     var userID = localStorage.getItem("user");
     console.log(userID);
     var account = db.collection("users").doc(userID);
-    var bev = new Beverage(drinkName,time, mg);
+    var bev = new Beverage(drinkName,time, parseInt(mg,10));
     account.get().then(function(doc){
         if(doc.exists) {
             var data = doc.data();
