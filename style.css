@@ -38,6 +38,9 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
     color: white;
     text-decoration: none;
 }
+.hidden {
+    display: none !important;
+}
 .jumbotron {
     height: 100%;
 }

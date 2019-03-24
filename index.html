@@ -8,7 +8,7 @@
     <script defer type="text/javascript">
       window.onload = function(){
         if (localStorage.getItem("loggedIn") != "1") {
-          document.querySelector("#button-container").setAttribute("style", "display: table-cell;");
+          document.querySelector("#button-container").classList.remove("hidden");
         }
       }
     </script>
@@ -37,7 +37,7 @@
           <button id = "add-beverage">+</button>
           <div id = "space-filler"></div>
         </div>
-        <div id = "button-container" style = "display: none;">
+        <div class = "hidden" id = "button-container">
           <a class = "linkButton" href = "signup.html">Sign Up</a>
           <a class = "linkButton" href = "login.html">Login</a>
         </div>
