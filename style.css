@@ -4,6 +4,8 @@
     --water-color: rgb(77, 206, 223);
     --water-color-light: rgb(143, 240, 253);
 
+    --wheatgrass-color: rgb(94, 223, 77);
+
     --transition-delay: .5s;
 }
 
@@ -39,10 +41,12 @@ ul{
     width: 100%;
 }
 #input-container .easy-autocomplete-container ul li:first-child {
-    border-radius: 1rem 1rem 0rem 0rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 #input-container .easy-autocomplete-container ul li:last-child {
-    border-radius: 0rem 0rem 1rem 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }
 #input-container .easy-autocomplete-container ul li.selected {
     background-color: var(--water-color-light);
@@ -55,6 +59,14 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
 }
 .hidden {
     display: none !important;
+}
+.addable.readyToAdd {
+    background-color: var(--wheatgrass-color) !important;
+    transition: var(--transition-delay);
+}
+.addable-glow.readyToAdd {
+    box-shadow: 0px 0px 200px 10px var(--wheatgrass-color) !important;
+    transition: var(--transition-delay);
 }
 .jumbotron {
     height: 100%;
@@ -135,6 +147,7 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
 }
 #add-beverage {
     display: inline-block;
+    visibility: hidden;
     vertical-align: middle;
     text-align: center;
 
@@ -143,6 +156,10 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
 
     font-size: 15px;
     font-weight: bold;
+}
+#add-beverage.readyToAdd {
+    visibility: visible;
+    transition: var(--transition-delay);
 }
 #button-container {
     width: 15%;

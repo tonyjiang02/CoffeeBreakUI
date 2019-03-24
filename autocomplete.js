@@ -4977,5 +4977,13 @@ function getCaffeine(drink) {
 }
 
 function search(){
-  document.querySelector("#caffeine-amount").innerHTML = getCaffeine(document.querySelector("#beverageInput").value);
+    var amountString = getCaffeine(document.querySelector("#beverageInput").value);
+    document.querySelector("#caffeine-amount").innerHTML = amountString;
+
+    $.each($(".addable, .addable-glow"), function(i, element){
+        if (amountString != "0" && !element.classList.contains("readyToAdd"))
+            element.classList.add("readyToAdd");
+        else if (amountString === "0" && element.classList.contains("readyToAdd"))
+            element.classList.remove("readyToAdd");
+    });
 }
