@@ -1,3 +1,26 @@
+
+:root{
+    --coffee-color: rgb(247, 141, 75);
+}
+
+body{
+    background-image: url("https://images.pond5.com/cup-coffee-black-background-footage-024643803_prevstill.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-shadow: 0px 0px 20px var(--coffee-color)
+}
+
+.row{
+    padding-top: 20px;
+}
+.question{
+    padding-top:15px;
+}
+
 .top {
     background-color: rgb(255, 234, 203)
+}
+#welcomeMessage{
+    font-size:30px;
 }

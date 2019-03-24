@@ -30,26 +30,26 @@
       <img src="/images/logo.png" width="300" height="66" alt="">
     </a>
     <div id = "button-container" >
-      <a class = "linkButton" href = "user.html">Profile</a>
-
+      <button id = "logoutButton" onclick = "logout()">Logout</button>
     </div>
   </nav>
-  <div class = "row">
-    <div class = "col-md-6">
-      <h2 id="welcomeMessage"></h2>
-      <h3>The total amount of Caffeine you had today is: </h3>
-      <h3 id="caffeineAmount"></h3>
+  <div class = "container">
+    <div class = "row">
+      <div class = "col-md-6" id = "left">
+        <h2 id="welcomeMessage"></h2>
+        <h3>The total amount of Caffeine you had today is: </h3>
+        <h3 id="caffeineAmount"></h3>
 
-      <h3>The amount of caffeine left in your body (mg) </h3>
-      <h3 id = "currentCaffeine"></h3>
-      <h3>When you can get ideal sleep :</h3>
-      <h3 id="sleepTime"></h3>
-    </div>
-    <div class = "col-md-6">
-      <h2>These are the drinks you had today</h2>
-      <ul>
-        
-      </ul>
+        <h3 class = "question">The amount of caffeine left in your body:</h3>
+        <h3 id = "currentCaffeine"></h3>
+        <h3 class = "question">When you can get ideal sleep :</h3>
+        <h3 id="sleepTime"></h3>
+      </div>
+      <div class = "col-md-6">
+        <h2>These are the drinks you had today</h2>
+        <ul id = "drinksList">
+        </ul>
+      </div>
     </div>
   </div>
 </body>

@@ -15,13 +15,11 @@ $(document).ready(function () {
     })
 });
 function init() {
-    console.log("calling function")
-    console.log(userData)
     $("#welcomeMessage").html("Welcome " + userData.email);
     var sum = calcSum(userData.beverages);
     $("#caffeineAmount").html(sum + " mg");
-    calcLevel(userData.beverages);
     setTimeLeft();
+    listDrinks();
 }
 function calcSum(bevs) {
     var output = 0;
@@ -33,7 +31,6 @@ function calcSum(bevs) {
 function calcLevel(bevs) {
     var mgTotal =0;
     var milisec;
-    console.log(bevs);
     for (var i = 0; i < bevs.length; i++) {
         var time = Date.now() - bevs[i]["timestamp"];
         var one = (-3.85*Math.pow(10,-8));
@@ -41,22 +38,16 @@ function calcLevel(bevs) {
         var three = Math.exp(one*time+two);
         mgTotal += three;
     }
-    console.log(mgTotal);
     var p1 = Math.log(95.177/mgTotal);
     var p2 = (-3.85*Math.pow(10,-8));
-    console.log(p1);
-    console.log(p2);
     milisec = p1/p2;
-    console.log(milisec);
     if(milisec < 0){
         milisec = 0;
     }
-    console.log(milisec);
     return [mgTotal, milisec];
 }
 function setTimeLeft() {
     var arr = calcLevel(userData.beverages);
-    console.log(arr[1]);
     var time= arr[1] + Date.now();
     var dt = new Date(time);
     $("#sleepTime").html(dt );
@@ -65,9 +56,18 @@ function setTimeLeft() {
 function setLiveCaffeineCounter() {
     if (userData) {
         var arr = calcLevel(userData.beverages);
-        $("#currentCaffeine").html(arr[0].toFixed(1));
-        console.log("updating");
+        $("#currentCaffeine").html(arr[0].toFixed(1)+" mg");
     }else {
-        console.log("userdata no existe")
+    }
+}
+function listDrinks() {
+    console.log("listing Drinks")
+    var list = $("#drinksList");
+    for (var i =0; i<userData.beverages.length; i++) {
+        var name = userData.beverages[i]["name"];
+        var mg = userData.beverages[i]["mg"];
+        console.log(name);
+        console.log(mg);
+        list.append("<li>"+name+" : "+mg+" mg caffeine " + "</li>")
     }
 }
