@@ -1,0 +1,129 @@
+:root{
+    --coffee-color: rgb(247, 141, 75);
+    --coffee-color-light: rgb(255, 201, 167);
+    --water-color: rgb(77, 206, 223);
+    --water-color-light: rgb(143, 240, 253);
+
+    --transition-delay: .5s;
+}
+
+body{
+    text-align: center;
+    background-color: gray;
+    background-image: url("https://www.malaysia29.com/wp-content/uploads/8a794997a7.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+
+}
+input{
+    margin: 0 auto;
+}
+ul{
+    width: 100%;
+}
+a, a:hover, a:visited{
+    padding: 5px 12px;
+    padding-bottom: 7px;
+    color: white;
+    text-decoration: none;
+}
+.jumbotron {
+    height: 100%;
+}
+.display-4 {
+    text-align:center;
+}
+#form-container {
+    width: 100%; 
+    height: 70px;
+    background-color: white; 
+    position: fixed; 
+    top: 0px;
+    padding-left: 10px;
+    
+    display: table;
+    border-spacing: 20px 0px;
+
+    box-shadow: 0px 0px 200px 10px var(--coffee-color);
+}
+#form-container:focus-within {
+    box-shadow: 0px 0px 200px 10px var(--water-color);
+    transition: var(--transition-delay);
+}
+#form-container > * {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+
+    margin: auto 5px;
+}
+#form-container a {
+    margin: auto 5px;
+}
+#form-container #logo {
+    width: 100%;
+    height: 100%;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-image: url('images/logo.png');
+    background-blend-mode: normal;
+}
+#form-container #logo:hover {
+    background-color: var(--water-color);
+    background-blend-mode: color;
+    transition: var(--transition-delay);
+}
+#logo-container {
+    width: 250px;
+    height: 100%;
+}
+#beverageInput{
+    padding-left: 15px;
+}
+#beverageInput, #form-container a {
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    background-color: var(--coffee-color);
+}
+#beverageInput, #beverageInput::placeholder {
+    color: white;
+}
+#beverageInput:focus {
+    background-color: var(--water-color);
+    transition: var(--transition-delay);
+}
+#button-container {
+    width: 15%;
+    white-space: nowrap;
+}
+#button-container a:hover{
+    background-color: var(--coffee-color-light);
+    transition: var(--transition-delay);
+}
+#button-container a:first-child{
+    background-color: var(--water-color);
+}
+#button-container a:first-child:hover{
+    background-color: var(--water-color-light);
+    transition: var(--transition-delay);
+}
+label#caffeine-amount{
+    margin-top: 300px;
+    font-size: 100px;
+    color: white;
+
+    text-shadow: 0px 0px 50px var(--coffee-color);
+}
+label#caffeine-amount::before{
+    content: "Caffeine: ";
+    font-size: 50px;
+}
+label#caffeine-amount::after{
+    content: "mg";
+    font-size: 50px;
+}
