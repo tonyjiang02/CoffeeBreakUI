@@ -11,8 +11,9 @@ body{
     text-align: center;
     background-color: gray;
     background-image: url("https://www.malaysia29.com/wp-content/uploads/8a794997a7.jpg");
+    background-position: center 10%;
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: 1700px auto;
 
 }
 input{
@@ -21,7 +22,7 @@ input{
 ul{
     width: 100%;
 }
-a, a:hover, a:visited{
+a.linkButton , a.linkButton :hover, a.linkButton :visited{
     padding: 5px 12px;
     padding-bottom: 7px;
     color: white;
@@ -57,32 +58,36 @@ a, a:hover, a:visited{
 
     margin: auto 5px;
 }
-#form-container a {
+#form-container a.linkButton {
     margin: auto 5px;
 }
 #form-container #logo {
-    width: 100%;
+    width: 250px;
+    min-width: 250px;
     height: 100%;
-    background-size: 100% auto;
+    
+    background-size: 250px auto;
     background-position: center;
     background-repeat: no-repeat;
 
     background-image: url('images/logo.png');
-    background-blend-mode: normal;
 }
-#form-container #logo:hover {
-    background-color: var(--water-color);
-    background-blend-mode: color;
-    transition: var(--transition-delay);
-}
-#logo-container {
-    width: 250px;
+#logo-overlay {
+    width: 100%;
     height: 100%;
+}
+#logo-overlay:hover{
+    background-color: var(--coffee-color-light);
+    mix-blend-mode: lighten;
+    transition: var(--transition-delay);
+
+    cursor: pointer;
 }
 #beverageInput{
     padding-left: 15px;
+    width: 400px;
 }
-#beverageInput, #form-container a {
+#beverageInput, #form-container a.linkButton {
     border-radius: 1rem;
     border: none;
     outline: none;
@@ -112,6 +117,9 @@ a, a:hover, a:visited{
     background-color: var(--water-color-light);
     transition: var(--transition-delay);
 }
+#space-filler{
+    max-width: 50px;
+}
 label#caffeine-amount{
     margin-top: 300px;
     font-size: 100px;
@@ -126,4 +134,16 @@ label#caffeine-amount::before{
 label#caffeine-amount::after{
     content: "mg";
     font-size: 50px;
+}
+
+@media only screen and (max-width: 750px) {
+    #input-container{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #button-container{
+        display: none;
+    }
 }
