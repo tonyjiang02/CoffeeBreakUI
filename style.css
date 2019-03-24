@@ -89,6 +89,7 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
     transition: var(--transition-delay);
 }
 #form-container:focus-within {
+    height: 100px;
     box-shadow: 0px 0px 200px 10px var(--water-color);
     transition: var(--transition-delay);
 }
@@ -126,11 +127,17 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
     cursor: pointer;
 }
 #input-container{
-    width: 70%;
+    width: 40%;
     min-width: 300px;
 
     display: inline-block;
     vertical-align: middle;
+
+    transition: var(--transition-delay);
+}
+#input-container:focus-within {
+    width: 80%;
+    transition: var(--transition-delay);
 }
 #beverageInput{
     padding-left: 15px;
