@@ -14,7 +14,17 @@ body{
     background-position: center 10%;
     background-repeat: no-repeat;
     background-size: 1700px auto;
+}
+button, #beverageInput, #form-container a.linkButton {
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    box-shadow: none;
 
+    background-color: var(--coffee-color);
+}
+button:focus{
+    outline: none;
 }
 input{
     margin: 0 auto;
@@ -95,14 +105,6 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
     width: 100%;
     height: 36px;
 }
-#beverageInput, #form-container a.linkButton {
-    border-radius: 1rem;
-    border: none;
-    outline: none;
-    box-shadow: none;
-
-    background-color: var(--coffee-color);
-}
 #beverageInput, #beverageInput::placeholder {
     color: white;
 }
@@ -110,23 +112,23 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
     background-color: var(--water-color);
     transition: var(--transition-delay);
 }
-#add-beverage{
+#add-beverage {
     display: inline-block;
     vertical-align: middle;
-
-    width: 20px;
-    height: 20px;
-    line-height: 15px;
-
-    padding: 0px;
-
     text-align: center;
 
+    padding: 0px 7px;
+    padding-bottom: 3px;
+
     font-size: 15px;
-    font-style: bold;
+    font-weight: bold;
     color: white;
 
     background-color: var(--water-color);
+}
+#add-beverage:hover {
+    background-color: var(--water-color-light);
+    transition: var(--transition-delay);
 }
 #button-container {
     width: 15%;
@@ -159,8 +161,8 @@ label#caffeine-amount::after{
     font-size: 50px;
 }
 
-@media only screen and (max-width: 820px) {
-    #input-container{
+@media only screen and (max-width: 840px) {
+    #input-container, #add-beverage{
         display: none;
     }
 }
