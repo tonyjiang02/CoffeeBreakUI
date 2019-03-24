@@ -86,6 +86,7 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
     border-spacing: 20px 0px;
 
     box-shadow: 0px 0px 200px 10px var(--coffee-color);
+    transition: var(--transition-delay);
 }
 #form-container:focus-within {
     box-shadow: 0px 0px 200px 10px var(--water-color);
@@ -137,6 +138,7 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
     height: 36px;
 
     background-color: var(--coffee-color);
+    transition: var(--transition-delay);
 }
 #beverageInput, #beverageInput::placeholder, #form-container a.linkButton {
     color: white;
