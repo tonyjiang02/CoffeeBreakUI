@@ -17,7 +17,6 @@ var db = firebase.firestore();
 $(document).ready(function() {
     $("#add-beverage").click(function(e) {
         e.preventDefault();
-        addDrink();
     })
     $("#submitLogin").click(function(e) {
         e.preventDefault();
