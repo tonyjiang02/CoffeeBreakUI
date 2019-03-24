@@ -10,9 +10,17 @@
         if (localStorage.getItem("loggedIn") != "1") {
           document.querySelector("#add-beverage").classList.add("hidden");
           document.querySelector("#userLink").classList.add("hidden");
+          document.querySelector("#logoutButton").classList.add("hidden");
           document.querySelector("#signupLink").classList.remove("hidden");
           document.querySelector("#loginLink").classList.remove("hidden");
         }
+      }
+
+      function logout(){
+        localStorage.setItem("loggedIn", "0");
+        localStorage.setItem("user", "");
+
+        window.location.href = "/";
       }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -43,7 +51,8 @@
         <div id = "button-container">
           <a class = "linkButton hidden" id = "signupLink" href = "signup.html">Sign Up</a>
           <a class = "linkButton hidden" id = "loginLink" href = "login.html">Login</a>
-          <a class = "linkButton" id = "userLink" href = "user.html">Account</a>
+          <a class = "linkButton" id = "userLink" href = "users.html">Account</a>
+          <button id = "logoutButton" onclick = "logout()">Logout</button>
         </div>
     </form>
     <label id = "caffeine-amount">0</label>

@@ -20,8 +20,14 @@ button, ul, #beverageInput, #form-container a.linkButton {
     border: none;
     outline: none;
     box-shadow: none;
-
-    background-color: var(--coffee-color);
+}
+button{
+    color: white;
+    background-color: var(--water-color);
+}
+button:hover{
+    background-color: var(--water-color-light);
+    transition: var(--transition-delay);
 }
 button:focus{
     outline: none;
@@ -82,6 +88,7 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
 }
 #form-container a.linkButton {
     margin: auto 5px;
+    background-color: var(--coffee-color);
 }
 #form-container #logo {
     width: 250px;
@@ -116,8 +123,10 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
     padding-left: 15px;
     width: 100%;
     height: 36px;
+
+    background-color: var(--coffee-color);
 }
-#beverageInput, #beverageInput::placeholder {
+#beverageInput, #beverageInput::placeholder, #form-container a.linkButton {
     color: white;
 }
 #beverageInput:focus {
@@ -134,13 +143,6 @@ a.linkButton , a.linkButton :hover, a.linkButton :visited{
 
     font-size: 15px;
     font-weight: bold;
-    color: white;
-
-    background-color: var(--water-color);
-}
-#add-beverage:hover {
-    background-color: var(--water-color-light);
-    transition: var(--transition-delay);
 }
 #button-container {
     width: 15%;
